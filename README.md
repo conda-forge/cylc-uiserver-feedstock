@@ -5,7 +5,7 @@ Home: hhttps://github.com/cylc/cylc-uiserver
 
 Package license: GPL-3.0
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Cylc UI Server
 

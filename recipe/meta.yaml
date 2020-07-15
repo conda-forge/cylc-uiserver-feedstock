@@ -1,5 +1,5 @@
 {% set name = "cylc-uiserver" %}
-{% set version = "0.1" %}
+{% set version = "0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,15 +7,15 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4cc85a6680148cddd8f1fd714f772acb7c52487239b7c2b781bf543a51c099d1
+  sha256: 796af6b1fb74b63cd87c1be304e56f7cc618d5264fc0b8dd974050271f673be8
 
 build:
-  number: 1
+  number: 0
   # cylc-uiserver provides JupyterHub extensions and a small Jupyter Application. As JupyterHub
   # does not run on Windows, we skip the build for that platform here
-  skip: True  # [py<37 or not linux]
-  skip: True  # [py2k]
-  script: "{{ PYTHON }} -m pip install . -vv"
+  skip: true  # [py<37 or not linux]
+  skip: true  # [py2k]
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -43,7 +43,7 @@ about:
   license: GPL-3.0
   license_family: GPL
   license_file: COPYING
-  summary: 'Cylc UI Server'
+  summary: Cylc UI Server
 
   description: |
     This project contains the Cylc UI Server.

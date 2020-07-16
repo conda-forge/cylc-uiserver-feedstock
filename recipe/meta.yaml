@@ -28,9 +28,11 @@ requirements:
   run:
     - python
     - cylc-flow ==8.0a2
-    - graphene-tornado >=2.6
     - jupyterhub >=1.1
     - tornado >=6.0
+    - graphene-tornado >=2.6
+    - graphql-core <3,>=2.1
+    - graphql-ws ==0.3.1
 
 test:
   imports:

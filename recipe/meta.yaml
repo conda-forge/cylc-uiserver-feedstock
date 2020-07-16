@@ -39,7 +39,7 @@ test:
     - cylc-uiserver --help
 
 about:
-  home: hhttps://github.com/cylc/cylc-uiserver
+  home: https://github.com/cylc/cylc-uiserver
   license: GPL-3.0
   license_family: GPL
   license_file: COPYING

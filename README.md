@@ -1,7 +1,7 @@
 About cylc-uiserver
 ===================
 
-Home: hhttps://github.com/cylc/cylc-uiserver
+Home: https://github.com/cylc/cylc-uiserver
 
 Package license: GPL-3.0
 

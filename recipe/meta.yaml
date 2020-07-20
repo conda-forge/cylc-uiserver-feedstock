@@ -28,12 +28,12 @@ requirements:
   run:
     - python
     - cylc-flow ==8.0a2
-    - jupyterhub ==1.1.*
-    - tornado ==6.0.*
-    - graphene-tornado ==2.6.*
+    - jupyterhub >=1.1.0,<1.2
+    - tornado >=6.0,<6.1
+    - graphene-tornado >=2.6.0,<2.7
     - graphql-core <3,>=2.1
     - rx >=1.6,<2 # TODO: https://github.com/conda-forge/cylc-feedstock/pull/3#issuecomment-660716268
-    - graphql-ws ==0.3.*
+    - graphql-ws >=0.3.0,<0.4
 
 test:
   imports:

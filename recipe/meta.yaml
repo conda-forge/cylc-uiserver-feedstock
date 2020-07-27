@@ -21,10 +21,6 @@ requirements:
   host:
     - python
     - pip
-    # TODO: build failed with pytest-runner only, because the setup.py of cylc-uiserver specifies this
-    # version of pytest-runner. Need to make pytest-runner a dependency only for python setup.py test
-    # and then remove this from requirements|host in the recipe
-    - pytest-runner ==4.4
   run:
     - python
     - cylc-flow ==8.0b0

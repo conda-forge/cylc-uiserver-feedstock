@@ -39,7 +39,7 @@ test:
   imports:
     - cylc.uiserver
   commands:
-    - cylc-uiserver --help
+    - cylc uiserver --help
 
 about:
   home: https://github.com/cylc/cylc-uiserver

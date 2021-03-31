@@ -1,5 +1,5 @@
 {% set name = "cylc-uiserver" %}
-{% set version = "0.2" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 796af6b1fb74b63cd87c1be304e56f7cc618d5264fc0b8dd974050271f673be8
+  sha256: b4b1d944185785e481e00d2735452a3057327bfcb861820a0478e33ddcdbec98
 
 build:
-  number: 2
+  number: 0
   # cylc-uiserver provides JupyterHub extensions and a small Jupyter Application. As JupyterHub
   # does not run on Windows, we skip the build for that platform here
   skip: true  # [py<37 or not linux]
@@ -21,29 +21,29 @@ requirements:
   host:
     - python
     - pip
-    # TODO: build failed with pytest-runner only, because the setup.py of cylc-uiserver specifies this
-    # version of pytest-runner. Need to make pytest-runner a dependency only for python setup.py test
-    # and then remove this from requirements|host in the recipe
-    - pytest-runner ==4.4
+  # We use graphene and traitlets only lightly, so accepting the transitive
+  # versions from graphene-tornado and jupyterhub.
   run:
     - python
-    - cylc-flow ==8.0a2
-    - jupyterhub >=1.1.0,<1.2
-    - tornado >=6.0,<6.1
+    - cylc-flow ==8.0b0
+    - jupyterhub >=1.3.0,<1.4
+    - tornado >=6.1,<6.2
     - graphene-tornado >=2.6.0,<2.7
     - graphql-core <3,>=2.1
     - rx >=1.6,<2 # TODO: https://github.com/conda-forge/cylc-feedstock/pull/3#issuecomment-660716268
     - graphql-ws >=0.3.0,<0.4
+    - traitlets
+    - graphene
 
 test:
   imports:
     - cylc.uiserver
   commands:
-    - cylc-uiserver --help
+    - cylc uiserver --help
 
 about:
   home: https://github.com/cylc/cylc-uiserver
-  license: GPL-3.0
+  license: GPL-3.0-only
   license_family: GPL
   license_file: COPYING
   summary: Cylc UI Server

@@ -30,7 +30,6 @@ requirements:
     - tornado >=6.1,<6.2
     - graphene-tornado >=2.6.0,<2.7
     - graphql-core <3,>=2.1
-    - rx >=1.6,<2 # TODO: https://github.com/conda-forge/cylc-feedstock/pull/3#issuecomment-660716268
     - graphql-ws >=0.3.0,<0.4
     - traitlets
     - graphene

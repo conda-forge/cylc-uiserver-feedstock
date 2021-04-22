@@ -3,7 +3,7 @@ About cylc-uiserver
 
 Home: https://github.com/cylc/cylc-uiserver
 
-Package license: GPL-3.0
+Package license: GPL-3.0-only
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cylc-uiserver-feedstock/blob/master/LICENSE.txt)
 
@@ -72,6 +72,7 @@ Installing `cylc-uiserver` from the `conda-forge` channel can be achieved by add
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
 Once the `conda-forge` channel has been enabled, `cylc-uiserver` can be installed with:

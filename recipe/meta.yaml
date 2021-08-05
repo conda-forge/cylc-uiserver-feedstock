@@ -32,6 +32,7 @@ requirements:
     - graphql-ws >=0.3.1,<0.4
     - traitlets >5
     - graphene
+    - rx >=1.6,<2 # TODO: https://github.com/conda-forge/cylc-feedstock/pull/3#issuecomment-660716268
 
 test:
   imports:

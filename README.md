@@ -92,6 +92,8 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-cylc--uiserver-green.svg)](https://anaconda.org/conda-forge/cylc-uiserver) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cylc-uiserver.svg)](https://anaconda.org/conda-forge/cylc-uiserver) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cylc-uiserver.svg)](https://anaconda.org/conda-forge/cylc-uiserver) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cylc-uiserver.svg)](https://anaconda.org/conda-forge/cylc-uiserver) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-cylc--uiserver--base-green.svg)](https://anaconda.org/conda-forge/cylc-uiserver-base) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cylc-uiserver-base.svg)](https://anaconda.org/conda-forge/cylc-uiserver-base) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cylc-uiserver-base.svg)](https://anaconda.org/conda-forge/cylc-uiserver-base) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cylc-uiserver-base.svg)](https://anaconda.org/conda-forge/cylc-uiserver-base) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-cylc--uiserver--hub--base-green.svg)](https://anaconda.org/conda-forge/cylc-uiserver-hub-base) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cylc-uiserver-hub-base.svg)](https://anaconda.org/conda-forge/cylc-uiserver-hub-base) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cylc-uiserver-hub-base.svg)](https://anaconda.org/conda-forge/cylc-uiserver-hub-base) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cylc-uiserver-hub-base.svg)](https://anaconda.org/conda-forge/cylc-uiserver-hub-base) |
 
 Installing cylc-uiserver
 ========================
@@ -103,10 +105,10 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `cylc-uiserver` can be installed with:
+Once the `conda-forge` channel has been enabled, `cylc-uiserver, cylc-uiserver-base, cylc-uiserver-hub-base` can be installed with:
 
 ```
-conda install cylc-uiserver
+conda install cylc-uiserver cylc-uiserver-base cylc-uiserver-hub-base
 ```
 
 It is possible to list all of the versions of `cylc-uiserver` available on your platform with:

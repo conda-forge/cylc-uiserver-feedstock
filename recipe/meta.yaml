@@ -51,6 +51,7 @@ outputs:
       commands:
         - cylc version --long
         - cylc gui --help
+        - command -v jupyter-cylc
 
   # UIS with the JupyterHub "base" package
   # (e.g. for sites that provide their own configurable HTTP proxy)
@@ -73,6 +74,8 @@ outputs:
         - cylc version --long
         - cylc gui --help
         - cylc hubapp --help
+        - command -v jupyter-cylc
+        - command -v jupyter-cylchubapp
 
   # UIS with the full JupyterHub package
   # (recommended)
@@ -96,6 +99,8 @@ outputs:
         - cylc gui --help
         - cylc hubapp --help
         - configurable-http-proxy --help
+        - command -v jupyter-cylc
+        - command -v jupyter-cylchubapp
 
 about:
   home: https://github.com/cylc/cylc-uiserver

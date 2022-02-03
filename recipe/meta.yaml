@@ -28,13 +28,15 @@ outputs:
   - name: {{ name }}-base
     build:
       script: python -m pip install . --no-deps --ignore-installed -vv
+      noarch: python
     requirements:
       host:
         - __unix
         - python >=3.7
         - pip
       run:
-        - python
+        - __unix
+        - python >=3.7
         - cylc-flow-base ==8.0b3
         - tornado >=6.1,<7.0
         - graphene-tornado >=2.6.0,<2.7
@@ -58,6 +60,7 @@ outputs:
   - name: {{ name }}-hub-base
     build:
       script: python -m pip install .[hub] --no-deps --ignore-installed -vv
+      noarch: python
     requirements:
       host:
         - __unix
@@ -82,6 +85,7 @@ outputs:
   - name: {{ name }}
     build:
       script: python -m pip install .[hub] --no-deps --ignore-installed -vv
+      noarch: python
     requirements:
       host:
         - __unix

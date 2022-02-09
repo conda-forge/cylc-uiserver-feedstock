@@ -10,15 +10,17 @@ source:
   sha256: 1abe919ba129bd421d7f8d64ac2290b0f011619efe5bfb423a5e1b9b9a797322
 
 build:
-  number: 0
-  skip: true  # [py<37 or not unix]
+  number: 1
+  noarch: python
 
 requirements:
   host:
-    - python
+    - __unix
+    - python >=3.7
     - pip
   run:
-    - python
+    - __unix
+    - python >=3.7
 
 outputs:
   # base package with only required dependencies
@@ -26,12 +28,15 @@ outputs:
   - name: {{ name }}-base
     build:
       script: python -m pip install . --no-deps --ignore-installed -vv
+      noarch: python
     requirements:
       host:
+        - __unix
+        - python >=3.7
         - pip
-        - python
       run:
-        - python
+        - __unix
+        - python >=3.7
         - cylc-flow-base ==8.0b3
         - tornado >=6.1,<7.0
         - graphene-tornado >=2.6.0,<2.7
@@ -48,16 +53,19 @@ outputs:
       commands:
         - cylc version --long
         - cylc gui --help
+        - command -v jupyter-cylc
 
   # UIS with the JupyterHub "base" package
   # (e.g. for sites that provide their own configurable HTTP proxy)
   - name: {{ name }}-hub-base
     build:
       script: python -m pip install .[hub] --no-deps --ignore-installed -vv
+      noarch: python
     requirements:
       host:
+        - __unix
+        - python >=3.7
         - pip
-        - python
       run:
         - {{ pin_subpackage(name + "-base", exact=True) }}
         - jupyterhub-base >=1.4.0,<1.5
@@ -69,16 +77,20 @@ outputs:
         - cylc version --long
         - cylc gui --help
         - cylc hubapp --help
+        - command -v jupyter-cylc
+        - command -v jupyter-cylchubapp
 
   # UIS with the full JupyterHub package
   # (recommended)
   - name: {{ name }}
     build:
       script: python -m pip install .[hub] --no-deps --ignore-installed -vv
+      noarch: python
     requirements:
       host:
+        - __unix
+        - python >=3.7
         - pip
-        - python
       run:
         - {{ pin_subpackage(name + "-base", exact=True) }}
         - jupyterhub >=1.4.0,<1.5
@@ -91,6 +103,8 @@ outputs:
         - cylc gui --help
         - cylc hubapp --help
         - configurable-http-proxy --help
+        - command -v jupyter-cylc
+        - command -v jupyter-cylchubapp
 
 about:
   home: https://github.com/cylc/cylc-uiserver
@@ -109,5 +123,4 @@ about:
 extra:
   recipe-maintainers:
     - hjoliver
-    - kinow
     - oliver-sanders

@@ -1,5 +1,5 @@
 {% set name = "cylc-uiserver" %}
-{% set version = "0.6.0" %}
+{% set version = "1.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 1abe919ba129bd421d7f8d64ac2290b0f011619efe5bfb423a5e1b9b9a797322
+  sha256: 824dce274952515ba5c652ebb7086cf14c90f72b337ae4f7c8e11a21f9a5469d
 
 build:
-  number: 1
+  number: 0
   noarch: python
 
 requirements:
@@ -37,8 +37,8 @@ outputs:
       run:
         - __unix
         - python >=3.7
-        - cylc-flow-base ==8.0b3
-        - tornado >=6.1,<7.0
+        - cylc-flow-base ==8.0rc1
+        - tornado >=6.1
         - graphene-tornado >=2.6.0,<2.7
         - graphql-ws ==0.4.4
         - jupyter_server >=1.10.2,<2.0
@@ -46,6 +46,7 @@ outputs:
         - graphene
         # TODO: https://github.com/conda-forge/cylc-feedstock/pull/3#issuecomment-660716268
         - rx >=1.6,<2
+
     test:
       imports:
         - cylc.flow

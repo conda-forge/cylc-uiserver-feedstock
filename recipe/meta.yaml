@@ -10,7 +10,7 @@ source:
   sha256: 4ee50d2130adff797494c47a12881bd2b6e3afcf610a2d214c180e13f77e5818
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 requirements:
@@ -37,7 +37,7 @@ outputs:
       run:
         - __unix
         - python >=3.7
-        - cylc-flow-base ==8.0rc1
+        - cylc-flow-base ==8.0rc2
         - tornado >=6.1
         - graphene-tornado >=2.6.0,<2.7
         - graphql-ws ==0.4.4

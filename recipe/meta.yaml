@@ -10,7 +10,7 @@ source:
   sha256: 4ee50d2130adff797494c47a12881bd2b6e3afcf610a2d214c180e13f77e5818
 
 build:
-  number: 1
+  number: 2
   noarch: python
 
 requirements:
@@ -48,6 +48,8 @@ outputs:
         - rx >=1.6,<2
 
     test:
+      files:
+        - tests/test_packaging.py
       imports:
         - cylc.flow
         - cylc.uiserver
@@ -55,6 +57,8 @@ outputs:
         - cylc version --long
         - cylc gui --help
         - command -v jupyter-cylc
+        - ./tests/test_packaging.py ui
+        - ./tests/test_packaging.py py.typed
 
   # UIS with the JupyterHub "base" package
   # (e.g. for sites that provide their own configurable HTTP proxy)
@@ -71,6 +75,8 @@ outputs:
         - {{ pin_subpackage(name + "-base", exact=True) }}
         - jupyterhub-base >=1.4.0,<1.5
     test:
+      files:
+        - tests/test_packaging.py
       imports:
         - cylc.flow
         - cylc.uiserver
@@ -80,6 +86,8 @@ outputs:
         - cylc hubapp --help
         - command -v jupyter-cylc
         - command -v jupyter-cylchubapp
+        - ./tests/test_packaging.py ui
+        - ./tests/test_packaging.py py.typed
 
   # UIS with the full JupyterHub package
   # (recommended)
@@ -96,6 +104,8 @@ outputs:
         - {{ pin_subpackage(name + "-base", exact=True) }}
         - jupyterhub >=1.4.0,<1.5
     test:
+      files:
+        - tests/test_packaging.py
       imports:
         - cylc.flow
         - cylc.uiserver
@@ -106,6 +116,8 @@ outputs:
         - configurable-http-proxy --help
         - command -v jupyter-cylc
         - command -v jupyter-cylchubapp
+        - ./tests/test_packaging.py ui
+        - ./tests/test_packaging.py py.typed
 
 about:
   home: https://github.com/cylc/cylc-uiserver

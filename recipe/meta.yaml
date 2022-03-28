@@ -57,8 +57,8 @@ outputs:
         - cylc version --long
         - cylc gui --help
         - command -v jupyter-cylc
-        - test_packaging.py ui
-        - test_packaging.py py.typed
+        - ./tests/test_packaging.py ui
+        - ./tests/test_packaging.py py.typed
 
   # UIS with the JupyterHub "base" package
   # (e.g. for sites that provide their own configurable HTTP proxy)
@@ -86,8 +86,8 @@ outputs:
         - cylc hubapp --help
         - command -v jupyter-cylc
         - command -v jupyter-cylchubapp
-        - test_packaging.py ui
-        - test_packaging.py py.typed
+        - ./tests/test_packaging.py ui
+        - ./tests/test_packaging.py py.typed
 
   # UIS with the full JupyterHub package
   # (recommended)
@@ -116,8 +116,8 @@ outputs:
         - configurable-http-proxy --help
         - command -v jupyter-cylc
         - command -v jupyter-cylchubapp
-        - test_packaging.py ui
-        - test_packaging.py py.typed
+        - ./tests/test_packaging.py ui
+        - ./tests/test_packaging.py py.typed
 
 about:
   home: https://github.com/cylc/cylc-uiserver

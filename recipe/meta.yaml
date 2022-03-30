@@ -10,7 +10,7 @@ source:
   sha256: 4ee50d2130adff797494c47a12881bd2b6e3afcf610a2d214c180e13f77e5818
 
 build:
-  number: 2
+  number: 3
   noarch: python
 
 requirements:
@@ -73,7 +73,7 @@ outputs:
         - pip
       run:
         - {{ pin_subpackage(name + "-base", exact=True) }}
-        - jupyterhub-base >=1.4.0,<1.5
+        - jupyterhub-base >=1.4.0
     test:
       files:
         - tests/test_packaging.py
@@ -102,7 +102,7 @@ outputs:
         - pip
       run:
         - {{ pin_subpackage(name + "-base", exact=True) }}
-        - jupyterhub >=1.4.0,<1.5
+        - jupyterhub >=1.4.0
     test:
       files:
         - tests/test_packaging.py

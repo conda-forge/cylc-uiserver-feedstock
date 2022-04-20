@@ -10,7 +10,7 @@ source:
   sha256: 4ee50d2130adff797494c47a12881bd2b6e3afcf610a2d214c180e13f77e5818
 
 build:
-  number: 3
+  number: 4
   noarch: python
 
 requirements:
@@ -42,7 +42,10 @@ outputs:
         - graphene-tornado >=2.6.0,<2.7
         - graphql-ws ==0.4.4
         - jupyter_server >=1.10.2,<2.0
-        - traitlets >=5.0
+
+          # remove in next release: https://github.com/cylc/cylc-uiserver/pull/342
+        - traitlets >=5.0,<5.1.2
+
         - graphene
         # TODO: https://github.com/conda-forge/cylc-feedstock/pull/3#issuecomment-660716268
         - rx >=1.6,<2

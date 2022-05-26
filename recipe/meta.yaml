@@ -10,7 +10,7 @@ source:
   sha256: 3a2510808873afcf7a0fd57766a7a203c9741b7afd485ab1c80da3d3bbb77e31
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 requirements:
@@ -37,7 +37,7 @@ outputs:
       run:
         - __unix
         - python >=3.7
-        - cylc-flow-base ==8.0rc2
+        - cylc-flow-base ==8.0rc3
         - tornado >=6.1
         - graphene-tornado >=2.6.0,<2.7
         - graphql-ws ==0.4.4
@@ -140,3 +140,5 @@ extra:
   recipe-maintainers:
     - hjoliver
     - oliver-sanders
+    - MetRonnie
+    - wxtim

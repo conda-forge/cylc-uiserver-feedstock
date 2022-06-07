@@ -42,12 +42,15 @@ outputs:
         - graphene-tornado >=2.6.0,<2.7
         - graphql-ws ==0.4.4
         - jupyter_server >=1.10.2,<2.0
+        - traitlets >=5.0
 
-          # remove in next release: https://github.com/cylc/cylc-uiserver/pull/342
-        - traitlets >=5.0,<5.1.2
-
+        # Transitive dependencies that we directly (lightly) use:
+        - pyzmq
         - graphene
-        # TODO: https://github.com/conda-forge/cylc-feedstock/pull/3#issuecomment-660716268
+        - graphql-core
+
+        # Fix lack of upper pin for rx in graphql-core<2.3.0 (remove when
+        # upgrading graphene to 3.0):
         - rx >=1.6,<2
 
     test:

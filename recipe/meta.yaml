@@ -16,11 +16,11 @@ build:
 requirements:
   host:
     - __unix
-    - python >=3.7
+    - python >=3.7,<3.10
     - pip
   run:
     - __unix
-    - python >=3.7
+    - python >=3.7,<3.10
 
 outputs:
   # base package with only required dependencies
@@ -32,11 +32,11 @@ outputs:
     requirements:
       host:
         - __unix
-        - python >=3.7
+        - python >=3.7,<3.10
         - pip
       run:
         - __unix
-        - python >=3.7
+        - python >=3.7,<3.10
         - cylc-flow-base >=8.1,<8.2
         - tornado >=6.1
         - graphene-tornado >=2.6.0,<2.7
@@ -75,7 +75,7 @@ outputs:
     requirements:
       host:
         - __unix
-        - python >=3.7
+        - python >=3.7,<3.10
         - pip
       run:
         - {{ pin_subpackage(name + "-base", exact=True) }}
@@ -104,7 +104,7 @@ outputs:
     requirements:
       host:
         - __unix
-        - python >=3.7
+        - python >=3.7,<3.10
         - pip
       run:
         - {{ pin_subpackage(name + "-base", exact=True) }}

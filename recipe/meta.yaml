@@ -1,5 +1,5 @@
 {% set name = "cylc-uiserver" %}
-{% set version = "1.1.0" %}
+{% set version = "1.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f6d58085c9d8f3a6d4241343335371a9588cf667447a2c84b420eebee6bae5f5
+  sha256: 0a5ceab75ce83f8e0a83148fe9de084ff32c75be372427d708b31fb44d9ed87c
 
 build:
   number: 0
@@ -16,11 +16,11 @@ build:
 requirements:
   host:
     - __unix
-    - python >=3.7
+    - python >=3.7,<3.10
     - pip
   run:
     - __unix
-    - python >=3.7
+    - python >=3.7,<3.10
 
 outputs:
   # base package with only required dependencies
@@ -32,17 +32,17 @@ outputs:
     requirements:
       host:
         - __unix
-        - python >=3.7
+        - python >=3.7,<3.10
         - pip
       run:
         - __unix
-        - python >=3.7
-        - cylc-flow-base >=8.0,<8.1
+        - python >=3.7,<3.10
+        - cylc-flow-base >=8.1,<8.2
         - tornado >=6.1
         - graphene-tornado >=2.6.0,<2.7
         - graphql-ws ==0.4.4
         - jupyter_server >=1.10.2,<2.0
-        - traitlets >=5.0
+        - traitlets >=5.2.1
 
         # Transitive dependencies that we directly (lightly) use:
         - pyzmq
@@ -75,7 +75,7 @@ outputs:
     requirements:
       host:
         - __unix
-        - python >=3.7
+        - python >=3.7,<3.10
         - pip
       run:
         - {{ pin_subpackage(name + "-base", exact=True) }}
@@ -104,7 +104,7 @@ outputs:
     requirements:
       host:
         - __unix
-        - python >=3.7
+        - python >=3.7,<3.10
         - pip
       run:
         - {{ pin_subpackage(name + "-base", exact=True) }}

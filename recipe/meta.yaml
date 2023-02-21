@@ -38,6 +38,7 @@ outputs:
         - __unix
         - python >=3.7,<3.10
         - cylc-flow-base >=8.1.2,<8.2
+        - ansimarkup >=1
         - tornado >=6.1
         - graphene-tornado >=2.6.0,<2.7
         - graphql-ws ==0.4.4

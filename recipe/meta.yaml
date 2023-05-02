@@ -1,5 +1,5 @@
 {% set name = "cylc-uiserver" %}
-{% set version = "1.2.1" %}
+{% set version = "1.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6219b5413ee0d1669bfdfc5a14fcfaedfeba7bc22700ed8356dd972c0b6c8d02
+  sha256: a52005de479be8b5fa34ab11a92a5c5b151d8db0bc931c8ada79d07b9362c6de
 
 build:
   number: 0
@@ -37,7 +37,7 @@ outputs:
       run:
         - __unix
         - python >=3.7,<3.10
-        - cylc-flow-base >=8.1.2,<8.2
+        - cylc-flow-base >=8.1.3,<8.2
         - ansimarkup >=1
         - tornado >=6.1
         - graphene-tornado >=2.6.0,<2.7
@@ -49,6 +49,7 @@ outputs:
         - pyzmq
         - graphene
         - graphql-core
+        - requests
 
         # Fix lack of upper pin for rx in graphql-core<2.3.0 (remove when
         # upgrading graphene to 3.0):

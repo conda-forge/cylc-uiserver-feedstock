@@ -49,6 +49,7 @@ outputs:
         - pyzmq
         - graphene
         - graphql-core
+        - requests
 
         # Fix lack of upper pin for rx in graphql-core<2.3.0 (remove when
         # upgrading graphene to 3.0):

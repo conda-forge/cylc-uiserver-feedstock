@@ -81,7 +81,7 @@ outputs:
         - pip
       run:
         - {{ pin_subpackage(name + "-base", exact=True) }}
-        - jupyterhub-base >=1.4.0
+        - jupyterhub-base >=4.0.0
     test:
       files:
         - tests/test_packaging.py
@@ -110,7 +110,7 @@ outputs:
         - pip
       run:
         - {{ pin_subpackage(name + "-base", exact=True) }}
-        - jupyterhub >=1.4.0
+        - jupyterhub >=4.0.0
     test:
       files:
         - tests/test_packaging.py

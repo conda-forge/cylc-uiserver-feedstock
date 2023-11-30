@@ -44,6 +44,7 @@ outputs:
         - graphql-ws ==0.4.4
         - jupyter_server >=2.7
         - traitlets >=5.2.1
+        - psutil
 
         # Transitive dependencies that we directly (lightly) use:
         - pyzmq

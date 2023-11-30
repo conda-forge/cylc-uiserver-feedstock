@@ -1,5 +1,5 @@
 {% set name = "cylc-uiserver" %}
-{% set version = "1.4.1" %}
+{% set version = "1.4.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 30e5f50331bb0af53bc3cd7545b33f9d95f4c999f42004d33a68a0569ab5efd5
+  sha256: d9b99c843b18f5c0b928877474ab65b9bca06d4277d97f29455d8780a37cf823
 
 build:
   number: 0
@@ -44,6 +44,7 @@ outputs:
         - graphql-ws ==0.4.4
         - jupyter_server >=2.7
         - traitlets >=5.2.1
+        - psutil
 
         # Transitive dependencies that we directly (lightly) use:
         - pyzmq

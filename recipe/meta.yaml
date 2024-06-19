@@ -1,13 +1,13 @@
 {% set name = "cylc-uiserver" %}
-{% set version = "1.4.4" %}
+{% set version = "1.5.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ad641e4660b80a08109e088b0ef1abe90267103a46300dc830383422b206453a
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 053f5131f33a7f1a26011ced38c50e8a14ee434b8dbecdbb3c638302832dcdd2
 
 build:
   number: 0
@@ -37,7 +37,7 @@ outputs:
       run:
         - __unix
         - python >=3.8,<3.10
-        - cylc-flow-base >=8.2,<8.3
+        - cylc-flow-base >=8.3,<8.4
         - ansimarkup >=1
         - tornado >=6.1
         - graphene-tornado >=2.6.0,<2.7

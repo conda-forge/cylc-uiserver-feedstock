@@ -37,7 +37,7 @@ outputs:
       run:
         - __unix
         - python >=3.8,<3.10
-        - cylc-flow-base >=8.2,<8.3
+        - cylc-flow-base >=8.3,<8.4
         - ansimarkup >=1
         - tornado >=6.1
         - graphene-tornado >=2.6.0,<2.7

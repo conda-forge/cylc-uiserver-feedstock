@@ -112,6 +112,7 @@ outputs:
         - __unix
         - python >=3.8,<3.10
         - pip
+        - setuptools
       run:
         - {{ pin_subpackage(name + "-base", exact=True) }}
         - jupyterhub >=4.0.0

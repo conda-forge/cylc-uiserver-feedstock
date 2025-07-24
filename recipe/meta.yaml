@@ -1,5 +1,5 @@
 {% set name = "cylc-uiserver" %}
-{% set version = "1.6.1" %}
+{% set version = "1.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 0ec0c4f2e06d69cf094b1827b8d615120c66d1bbd0c1c97a9e129fdd4ba7f074
+  sha256: d412d6bd3f8c2df0acc410b5ddffed90cb1611410b1f19566b89095bfc4b96bb
 
 build:
   number: 0
@@ -39,24 +39,18 @@ outputs:
       run:
         - __unix
         - python >={{ python_min }},<3.10
-        - cylc-flow-base >=8.4,<8.5
+        - cylc-flow-base >=8.5,<8.6
         - ansimarkup >=1
-        - tornado >=6.1
-        - graphene-tornado >=2.6.0,<2.7
-        - graphql-ws ==0.4.4
-        - jupyter_server >=2.7
-        - traitlets >=5.2.1
+        - jupyter_server >=2.13
+        - packaging
         - psutil
+        - tornado >=6.5
+        - traitlets >=5.2.1
 
         # Transitive dependencies that we directly (lightly) use:
         - pyzmq
         - graphene
-        - graphql-core
         - requests
-
-        # Fix lack of upper pin for rx in graphql-core<2.3.0 (remove when
-        # upgrading graphene to 3.0):
-        - rx >=1.6,<2
 
     test:
       requires:

@@ -10,7 +10,7 @@ source:
   sha256: d412d6bd3f8c2df0acc410b5ddffed90cb1611410b1f19566b89095bfc4b96bb
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 requirements:
@@ -21,7 +21,7 @@ requirements:
     - setuptools
   run:
     - __unix
-    - python >={{ python_min }},<3.10
+    - python >={{ python_min }}
 
 outputs:
   # base package with only required dependencies
@@ -38,7 +38,7 @@ outputs:
         - setuptools
       run:
         - __unix
-        - python >={{ python_min }},<3.10
+        - python >={{ python_min }}
         - cylc-flow-base >=8.5,<8.6
         - ansimarkup >=1
         - jupyter_server >=2.13

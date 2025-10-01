@@ -1,5 +1,5 @@
 {% set name = "cylc-uiserver" %}
-{% set version = "1.7.1" %}
+{% set version = "1.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: a841437b43873e198ffad0a496ee95efb14a6fd8eadb0b9182827ebac24dfdc7
+  sha256: 211c14f32013d41a4b6f9c76b0ff27e2e32272bc599b16886959eb19a0ef2c42
 
 build:
   number: 0
@@ -39,7 +39,7 @@ outputs:
       run:
         - __unix
         - python >={{ python_min }}
-        - cylc-flow-base >=8.5,<8.6
+        - cylc-flow-base >=8.6,<8.7
         - ansimarkup >=1
         - jupyter_server >=2.13
         - packaging
@@ -140,6 +140,7 @@ about:
   summary: Cylc UI Server
   description: |
     This project contains the Cylc UI Server.
+
     A JupyterHub-compatible application, used to display
     the Cylc UI (or simply UI) to users, and to communicate
     with Workflow Services (WFS).

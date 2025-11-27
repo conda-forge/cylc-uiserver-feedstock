@@ -14,6 +14,7 @@ Development: https://github.com/cylc/cylc-uiserver
 Documentation: https://github.com/cylc/cylc-uiserver
 
 This project contains the Cylc UI Server.
+
 A JupyterHub-compatible application, used to display
 the Cylc UI (or simply UI) to users, and to communicate
 with Workflow Services (WFS).
@@ -159,7 +160,4 @@ Feedstock Maintainers
 * [@hjoliver](https://github.com/hjoliver/)
 * [@oliver-sanders](https://github.com/oliver-sanders/)
 * [@wxtim](https://github.com/wxtim/)
-
-
-<!-- dummy commit to enable rerendering -->
 

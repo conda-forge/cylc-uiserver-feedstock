@@ -39,7 +39,7 @@ outputs:
       run:
         - __unix
         - python >={{ python_min }}
-        - cylc-flow-base >=8.6,<8.7
+        - cylc-flow-base >=8.6.2,<8.7
         - ansimarkup >=1
         - jupyter_server >=2.13
         - packaging

@@ -1,5 +1,5 @@
 {% set name = "cylc-uiserver" %}
-{% set version = "1.8.1" %}
+{% set version = "1.8.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 11bc3999fd1765731c164c61ffadba26ef383f5d74a06a387168163b102a0a06
+  sha256: 5d971cb8a287e84173a48202ed9f2d87c1d4ca5a7f111c17dc26f1701877552e
 
 build:
   number: 0
@@ -39,7 +39,7 @@ outputs:
       run:
         - __unix
         - python >={{ python_min }}
-        - cylc-flow-base >=8.6,<8.7
+        - cylc-flow-base >=8.6.2,<8.7
         - ansimarkup >=1
         - jupyter_server >=2.13
         - packaging

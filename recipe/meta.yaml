@@ -39,18 +39,21 @@ outputs:
       run:
         - __unix
         - python >={{ python_min }}
-        - cylc-flow-base >=8.6.2,<8.7
+        - cylc-flow-base >=8.6.4,<8.7
         - ansimarkup >=1
         - jupyter_server >=2.13
         - packaging
         - psutil
+        - requests
         - tornado >=6.5
         - traitlets >=5.2.1
+
+        # cylc review
+        - cherrypy
 
         # Transitive dependencies that we directly (lightly) use:
         - pyzmq
         - graphene
-        - requests
 
     test:
       requires:
@@ -60,9 +63,11 @@ outputs:
       imports:
         - cylc.flow
         - cylc.uiserver
+        - cylc.review.review
       commands:
         - cylc version --long
         - cylc gui --help
+        - cylc review --help
         - command -v jupyter-cylc
         - ./tests/test_packaging.py ui
         - ./tests/test_packaging.py py.typed
@@ -90,9 +95,11 @@ outputs:
       imports:
         - cylc.flow
         - cylc.uiserver
+        - cylc.review.review
       commands:
         - cylc version --long
         - cylc gui --help
+        - cylc review --help
         - cylc hubapp --help
         - command -v jupyter-cylc
         - command -v jupyter-cylchubapp
@@ -122,9 +129,11 @@ outputs:
       imports:
         - cylc.flow
         - cylc.uiserver
+        - cylc.review.review
       commands:
         - cylc version --long
         - cylc gui --help
+        - cylc review --help
         - cylc hubapp --help
         - configurable-http-proxy --help
         - command -v jupyter-cylc

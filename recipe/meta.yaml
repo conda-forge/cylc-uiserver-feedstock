@@ -1,5 +1,5 @@
 {% set name = "cylc-uiserver" %}
-{% set version = "1.9.2" %}
+{% set version = "1.9.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 7aef5436f0b756cf59a3f135b922496446df9a2180e0e7f5c85c6cf2ae8bbea2
+  sha256: d70f9c055541859b6e4ecb64464b6b3183ea6bc5561437c5416c2f30289cc407
 
 build:
   number: 0

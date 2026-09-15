@@ -53,31 +53,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `cylc-uiserver, cylc-uiserver-base, cylc-uiserver-hub-base` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install cylc-uiserver cylc-uiserver-base cylc-uiserver-hub-base
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install cylc-uiserver cylc-uiserver-base cylc-uiserver-hub-base
 ```
 
-It is possible to list all of the versions of `cylc-uiserver` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add cylc-uiserver cylc-uiserver-base cylc-uiserver-hub-base
+# for installing globally
+pixi global install cylc-uiserver cylc-uiserver-base cylc-uiserver-hub-base
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `cylc-uiserver` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search cylc-uiserver --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search cylc-uiserver --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search cylc-uiserver --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -89,6 +131,8 @@ mamba repoquery whoneeds cylc-uiserver --channel conda-forge
 # List dependencies of `cylc-uiserver`:
 mamba repoquery depends cylc-uiserver --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge

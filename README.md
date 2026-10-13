@@ -203,5 +203,6 @@ Feedstock Maintainers
 
 * [@MetRonnie](https://github.com/MetRonnie/)
 * [@hjoliver](https://github.com/hjoliver/)
+* [@jfrost-mo](https://github.com/jfrost-mo/)
 * [@oliver-sanders](https://github.com/oliver-sanders/)
 

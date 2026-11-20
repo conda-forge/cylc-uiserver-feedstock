@@ -205,6 +205,3 @@ Feedstock Maintainers
 * [@jfrost-mo](https://github.com/jfrost-mo/)
 * [@oliver-sanders](https://github.com/oliver-sanders/)
 
-
-<!-- dummy commit to enable rerendering -->
-

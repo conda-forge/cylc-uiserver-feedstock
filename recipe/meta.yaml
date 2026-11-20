@@ -1,5 +1,5 @@
 {% set name = "cylc-uiserver" %}
-{% set version = "1.10.1" %}
+{% set version = "1.10.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 437b2303fbfd9dae53ea640fa866c3a54a3b5e4f1fe8509c61d567e60df0826f
+  sha256: acee5bdb9ccb78fd190ea160dbfbf6b8b6d64e76dc3680132147b06ac1f36c64
 
 build:
   number: 0
